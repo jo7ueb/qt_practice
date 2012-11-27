@@ -13,8 +13,11 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        NewWorld.cpp
+        NewWorld.cpp \
+    AboutDialog.cpp
 
-HEADERS  += NewWorld.h
+HEADERS  += NewWorld.h \
+    AboutDialog.h
 
-FORMS    += NewWorld.ui
+FORMS    += NewWorld.ui \
+    AboutDialog.ui

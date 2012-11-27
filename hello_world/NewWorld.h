@@ -15,6 +15,9 @@ public:
     explicit NewWorld(QWidget *parent = 0);
     ~NewWorld();
     
+private slots:
+    void on_button_dialog_clicked();
+
 private:
     Ui::NewWorld *ui;
 };
