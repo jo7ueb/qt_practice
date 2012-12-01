@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>pictures/akari.jpg</file>
+        <file>pictures/ayano.jpg</file>
+        <file>pictures/chitose.jpg</file>
+        <file>pictures/kyoko.jpg</file>
+        <file>pictures/pink.jpg</file>
+        <file>pictures/yui.jpg</file>
+    </qresource>
+</RCC>

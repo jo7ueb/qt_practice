@@ -16,3 +16,6 @@ SOURCES += main.cpp\
 HEADERS  += Interface.h
 
 FORMS    += Interface.ui
+
+RESOURCES += \
+    fantastic_pictures.qrc
