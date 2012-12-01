@@ -1,4 +1,5 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    hello_world
+    hello_world \
+    picture_shuffler
