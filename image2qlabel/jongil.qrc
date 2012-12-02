@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/images">
-        <file>jon.jpg</file>
+        <file>kim.jpg</file>
+    </qresource>
+    <qresource prefix="/icons">
+        <file>nkflag.png</file>
     </qresource>
 </RCC>

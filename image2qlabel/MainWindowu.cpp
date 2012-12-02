@@ -1,7 +1,7 @@
 #include "MainWindowu.h"
 
 MainWindowu::MainWindowu(QWidget *parent) :
-    QMainWindow(parent)
+    QMainWindow(parent), state(false)
 {
     ui.setupUi(this);
     this->toggleJongIl();
@@ -13,14 +13,14 @@ void MainWindowu::toggleJongIl()
     if(state)
     {
         ui.jongil->setVisible(false);
-        ui.button->setText(QString("将軍様万歳！"));
+        ui.button->setText(QString("将軍様は滅びぬ．何度でも甦るさ！！"));
         state = false;
     }
 
     else
     {
         ui.jongil->setVisible(true);
-        ui.button->setText(QString("将軍様をポア"));
+        ui.button->setText(QString("スカッドさわやか"));
         state = true;
     }
 }
