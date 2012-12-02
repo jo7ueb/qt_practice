@@ -4,6 +4,7 @@ MainWindowu::MainWindowu(QWidget *parent) :
     QMainWindow(parent)
 {
     ui.setupUi(this);
+    this->toggleJongIl();
     QObject::connect(ui.button, SIGNAL(clicked(bool)), this, SLOT(toggleJongIl()));
 }
 
