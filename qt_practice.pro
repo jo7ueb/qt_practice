@@ -3,4 +3,5 @@ TEMPLATE = subdirs
 SUBDIRS += \
     hello_world \
     picture_shuffler \
-    image2qlabel
+    image2qlabel \
+    dwaring_on_qimage
