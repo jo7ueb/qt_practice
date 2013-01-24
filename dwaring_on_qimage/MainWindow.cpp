@@ -10,16 +10,21 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->button->setText("Test text");
 
     // prepare picture
-    QImage image(400, 300, QImage::Format_RGB32);
-    image.fill(QColor::fromRgb(255, 255, 255));
+    QImage image(400, 200, QImage::Format_RGB32);
+    image.fill(Qt::darkBlue);
 
     // paint text
     QPainter painter(&image);
-    painter.drawText(0, 0, "Text drawing test");
+    painter.setPen(Qt::white);
+    painter.drawText(0, 10, "Text drawing test"); // y position is for baseline!!
+    painter.fillRect(20, 20, 50, 50, Qt::yellow);
 
     // show label
     QPixmap pmap = QPixmap::fromImage(image);
     ui->label->setPixmap(pmap);
+
+    // save image file
+    image.save("test_image.png");
 }
 
 MainWindow::~MainWindow()
