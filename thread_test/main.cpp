@@ -12,8 +12,8 @@ int main(int argc, char *argv[])
 
     QObject::connect(&objA, SIGNAL(updateMessage(QString)), &w, SLOT(message_A(QString)));
     QObject::connect(&objB, SIGNAL(updateMessage(QString)), &w, SLOT(message_B(QString)));
-    QObject::connect(&w, SIGNAL(button_a_pushed()), &objA, SLOT(resetCount()));
-    QObject::connect(&w, SIGNAL(button_b_pushed()), &objB, SLOT(resetCount()));
+    QObject::connect(&w, SIGNAL(button_a_pushed()), &objA, SLOT(resetCount()), Qt::DirectConnection);
+    QObject::connect(&w, SIGNAL(button_b_pushed()), &objB, SLOT(resetCount()), Qt::DirectConnection);
     w.show();
 
     // connect signals
@@ -30,7 +30,11 @@ int main(int argc, char *argv[])
 
     a.exec();
 
+    objA.stop();
+    objB.stop();
     threadA.quit();
     threadB.quit();
+    threadA.wait();
+    threadB.wait();
 
 }

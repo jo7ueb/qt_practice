@@ -16,9 +16,11 @@ signals:
 public slots:
     void loop();
     void resetCount();
+    void stop();
 
 private:
     int count_dat;
+    bool cont_flag;
     
 };
 
