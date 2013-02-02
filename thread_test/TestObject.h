@@ -15,6 +15,9 @@ signals:
 
 public slots:
     void loop();
+
+private:
+    int count_dat;
     
 };
 

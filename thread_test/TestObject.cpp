@@ -1,17 +1,19 @@
 #include "TestObject.h"
 #include <unistd.h>
+#include <QThread>
+#include <iostream>
 
 TestObject::TestObject(QObject *parent) :
     QObject(parent)
 {
+    count_dat = 0;
 }
 
 void TestObject::loop()
 {
     while(1)
     {
-        int i=0;
+        emit updateMessage(QString::number(count_dat++));
         sleep(1);
-        emit updateMessage(QString::number(i++));
     }
 }

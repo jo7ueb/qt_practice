@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     threadA.start();
     threadB.start();
 
-    QTimer::singleShot(0, &objA, SLOT(loop()));
+    QMetaObject::invokeMethod(&objA, "loop");
 
     a.exec();
 
