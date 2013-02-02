@@ -22,8 +22,7 @@ int main(int argc, char *argv[])
     threadA.start();
     threadB.start();
 
-    if(!QMetaObject::invokeMethod(&objA, "loop"))
-        w.update_status("Failed to invoke objA.loop()");
+    QTimer::singleShot(0, &objA, SLOT(loop()));
 
     a.exec();
 
