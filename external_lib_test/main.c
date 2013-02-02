@@ -28,9 +28,28 @@ int main(void)
 
     // try PortAudio function
     {
+        PaDeviceIndex i, nr_devs, default_input, default_output;
+
         Pa_Initialize();
+        printf("\nPortAudio is initialized.\n");
+
+        nr_devs = Pa_GetDeviceCount();
+        default_input = Pa_GetDefaultInputDevice();
+        default_output = Pa_GetDefaultOutputDevice();
+        printf("Default Input: %d\n", default_input);
+        printf("Default Output: %d\n", default_output);
+
+        // list all available devices
+        for(i=0; i<nr_devs; ++i){
+            const PaDeviceInfo *info = Pa_GetDeviceInfo(i);
+            printf("%d: %s(%d,%d) f:%lf\n", i, info->name, info->maxInputChannels,
+                   info->maxOutputChannels, info->defaultSampleRate);
+        }
+
         Pa_Terminate();
     }
+
+    printf("End of the program\n");
 
     return 0;
 }

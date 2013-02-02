@@ -7,6 +7,6 @@ SUBDIRS += \
     dwaring_on_qimage \
     external_lib_test
 
-win32{
+#win32{
     SUBDIRS += display_available_sound_devices
-}
+#}
