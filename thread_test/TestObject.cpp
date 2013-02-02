@@ -11,6 +11,9 @@ TestObject::TestObject(QObject *parent) :
 
 void TestObject::loop()
 {
+    // This code doesn't help!
+    // QThread::yieldCurrentThread();
+
     while(1)
     {
         emit updateMessage(QString::number(count_dat++));
