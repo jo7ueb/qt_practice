@@ -22,6 +22,9 @@ signals:
     void button_a_pushed();
     void button_b_pushed();
 
+private slots:
+    void on_button_a_clicked();
+    void on_button_b_clicked();
 };
 
 #endif // MAINWINDOW_H
