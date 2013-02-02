@@ -17,3 +17,9 @@ void TestObject::loop()
         sleep(1);
     }
 }
+
+void TestObject::resetCount()
+{
+    count_dat = 0;
+    emit updateMessage(QString::number(count_dat));
+}
