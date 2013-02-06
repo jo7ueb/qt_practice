@@ -1,5 +1,5 @@
 #include <QtGui/QApplication>
-#include <QtMultimedia/QtMultimedia>
+#include <QtMultimedia>
 #include "SoundViewer.h"
 #include "SoundProcessor.h"
 
@@ -14,7 +14,9 @@ int main(int argc, char *argv[])
     f.setSampleType(QAudioFormat::Float);
     f.setChannelCount(1);
 
-    QAudioInput *audio = new QAudioInput(f);
+    QAudioDeviceInfo input = QAudioDeviceInfo::defaultInputDevice();
+
+    QAudioInput *audio = new QAudioInput(input, input.nearestFormat(f));
     QIODevice *dev = audio->start();
     p.setAudioSource(dev);
 
