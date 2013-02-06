@@ -9,6 +9,7 @@ SoundViewer::SoundViewer(QWidget *parent) :
 void SoundViewer::updateImage(QImage *i)
 {
     ui.label->setPixmap(QPixmap::fromImage(*i));
+    ui.label->show();
 }
 
 void SoundViewer::on_startButton_clicked()

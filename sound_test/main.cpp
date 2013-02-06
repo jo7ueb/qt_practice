@@ -9,6 +9,10 @@ int main(int argc, char *argv[])
     SoundViewer w;
     SoundProcessor p;
 
+    QObject::connect(&w, SIGNAL(startButton()), &p, SLOT(start()));
+    QObject::connect(&w, SIGNAL(stopButton()), &p, SLOT(stop()));
+    QObject::connect(&p, SIGNAL(imageUpdated(QImage*)), &w, SLOT(updateImage(QImage*)));
+
     QAudioFormat f;
     f.setSampleRate(18000);
     f.setSampleType(QAudioFormat::Float);
@@ -20,12 +24,11 @@ int main(int argc, char *argv[])
     QIODevice *dev = audio->start();
     p.setAudioSource(dev);
 
-    QObject::connect(&w, SIGNAL(startButton()), &p, SLOT(start()));
-    QObject::connect(&w, SIGNAL(stopButton()), &p, SLOT(stop()));
-    QObject::connect(&p, SIGNAL(imageUpdated(QImage*)), &w, SLOT(updateImage(QImage*)));
-
     w.show();
-    
+    a.exec();
+
+    audio->stop();
+    p.stop();
+
     delete audio;
-    return a.exec();
 }
