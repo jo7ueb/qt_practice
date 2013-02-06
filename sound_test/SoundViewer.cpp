@@ -5,3 +5,19 @@ SoundViewer::SoundViewer(QWidget *parent) :
 {
     ui.setupUi(this);
 }
+
+void SoundViewer::updateImage(QImage *i)
+{
+    ui.label->setPixmap(QPixmap::fromImage(*i));
+}
+
+void SoundViewer::on_startButton_clicked()
+{
+    emit startButton();
+}
+
+void SoundViewer::on_stopButton_clicked()
+{
+    emit stopButton();
+
+}

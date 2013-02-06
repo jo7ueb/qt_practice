@@ -12,6 +12,17 @@ public:
     
 private:
     Ui::SoundViewer ui;
+
+public slots:
+    void updateImage(QImage *i);
+
+signals:
+    void startButton();
+    void stopButton();
+
+private slots:
+    void on_startButton_clicked();
+    void on_stopButton_clicked();
 };
 
 #endif // SOUNDVIEWER_H

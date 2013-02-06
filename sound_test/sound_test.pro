@@ -4,15 +4,17 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui multimedia
 
 TARGET = sound_test
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        SoundViewer.cpp
+        SoundViewer.cpp \
+    SoundProcessor.cpp
 
-HEADERS  += SoundViewer.h
+HEADERS  += SoundViewer.h \
+    SoundProcessor.h
 
 FORMS    += SoundViewer.ui
