@@ -32,5 +32,11 @@ int main(int argc, char *argv[])
         std::cout << i << ": " << output_devs[i].deviceName().toStdString() << std::endl;
     }
 
+    // show available propaties of default input
+    std::cout << std::endl << std::endl << "Default Input Device" << std::endl;
+    QAudioDeviceInfo default_input = QAudioDeviceInfo::defaultInputDevice();
+    QList<int> sample_rates = default_input.supportedSampleRates();
+    for(int i=0; i<sample_rates.size(); ++i)
+        std::cout <<  "Sample rate: " << sample_rates[i] << std::endl;
     return a.exec();
 }
