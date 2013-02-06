@@ -6,7 +6,7 @@ SUBDIRS += \
     image2qlabel \
     dwaring_on_qimage \
     external_lib_test \
-    thread_test
+    thread_test \
     sound_test
 
 #win32{
