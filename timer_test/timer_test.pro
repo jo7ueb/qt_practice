@@ -13,8 +13,10 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        TimerTestWindow.cpp
+        TimerTestWindow.cpp \
+    TimerModule.cpp
 
-HEADERS  += TimerTestWindow.h
+HEADERS  += TimerTestWindow.h \
+    TimerModule.h
 
 FORMS    += TimerTestWindow.ui

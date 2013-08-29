@@ -16,7 +16,7 @@ public:
     ~TimerTestWindow();
 
 public slots:
-    void updateWorkerID(const Qt::HANDLE id);
+    void updateWorkerID(const int id);
     void updateWorkerMsg(const QString msg);
 
 signals:

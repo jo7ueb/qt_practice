@@ -16,9 +16,9 @@ TimerTestWindow::~TimerTestWindow()
     delete ui;
 }
 
-void TimerTestWindow::updateWorkerID(const Qt::HANDLE id)
+void TimerTestWindow::updateWorkerID(const int id)
 {
-    ui->text_workerid->setText(QString::number( (int)id ));
+    ui->text_workerid->setText(QString::number(id));
 }
 
 void TimerTestWindow::updateWorkerMsg(const QString msg)
